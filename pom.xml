@@ -7,4 +7,33 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
   </properties>
+    <dependencies>
+    <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>16.0.1</version>
+    </dependency>
+</dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!--配置你要执行的main函数的class全限类名或者使用启动参数
+                    mvn exec:java -Dexec.mainClass="com.xx.xx.client.xx" -Dexec.args="arg0 arg1 arg2"
+                    -->
+                    <mainClass>guavaExamples.RunExamples</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
